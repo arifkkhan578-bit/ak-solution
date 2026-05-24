@@ -42,8 +42,8 @@ app.post('/contact', async (req, res) => {
         pass: process.env.EMAIL_PASS
       }
     });
-
-    await transporter.sendMail({
+      console.log('EMAIL_USER:', process.env.EMAIL_USER);
+      console.log('EMAIL_PASS:', process.env.EMAIL_PASS ? 'SET' : 'NOT SET');    await transporter.sendMail({
       from: process.env.EMAIL_USER,
       to: process.env.EMAIL_USER,
       subject: 'New Contact - AK Solution',
