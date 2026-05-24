@@ -61,9 +61,9 @@ app.post('/contact', async (req, res) => {
 
     res.json({ success: true, message: 'Message sent!' });
   } catch (error) {
+    console.log('ERROR:', error.message);
     res.status(500).json({ success: false, error: error.message });
-  }
-});
+  }});
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
